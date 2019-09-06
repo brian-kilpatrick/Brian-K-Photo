@@ -1,82 +1,57 @@
-/**
- * SEO component that queries for data with
- *  Gatsby's useStaticQuery React hook
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
+import React from "react";
+import Helmet from "react-helmet";
 
-import React from "react"
-import PropTypes from "prop-types"
-import Helmet from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
-
-function SEO({ description, lang, meta, keywords, title }) {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-          }
-        }
-      }
-    `
-  );
-
-  const metaDescription = description || site.siteMetadata.description
-
+const SEO = ({ site, title, image }) => {
+  const { title: siteTitle, description, siteUrl } = site;
+  const formattedTitle = title ? `${title} | ${siteTitle}` : siteTitle;
   return (
-    <Helmet
-      htmlAttributes={{
-        lang,
-      }}
-      title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
-      meta={[
-        {
-          name: `description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:title`,
-          content: title,
-        },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-      ]
-        .concat(
-          keywords.length > 0
-            ? {
-                name: `keywords`,
-                content: keywords.join(`, `),
-              }
-            : []
-        )
-        .concat(meta)}
-    />
-  )
-}
-
-SEO.defaultProps = {
-  lang: `en`,
-  meta: [],
-  keywords: [],
-  description: ``,
-}
-
-SEO.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
-  keywords: PropTypes.arrayOf(PropTypes.string),
-  title: PropTypes.string.isRequired,
-}
-
-export default SEO
+      <Helmet
+          title={formattedTitle}
+          meta={[
+            {
+              name: "description", content: description
+            },
+            {
+              property: "og:title", content: siteTitle
+            },
+            {
+              property: "og:description", content: description
+            },
+            {
+              property: "og:url", content: siteUrl
+            },
+            {
+              property: "og:image", content: image ?  siteUrl + image : `${siteUrl}/img/site.jpg`
+            },
+            {
+              property: "og:image:secure_url", content: image ?  siteUrl + image : `${siteUrl}/img/site.jpg`
+            },
+            {
+              property: "og:image:alt", content: siteTitle
+            },
+            {
+              property: "og:type", content: "website"
+            },
+            {
+              property: "og:locale", content: "en_US"
+            },
+            {
+              property: "og:site_name", content: siteTitle
+            },
+            {
+              name: 'twitter:title', content: siteTitle
+            },
+            {
+              name: 'twitter:description', content: description
+            },
+            {
+              name: "twitter:card", content: "summary"
+            },
+            {
+              name: "google-site-verification", content: "WyOyqCHxTLyKcetD-RIWdG0NRb6OOvrmUkDjfoP5UKo"
+            }
+          ]}
+      />
+  );
+};
+export default SEO;

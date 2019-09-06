@@ -5,13 +5,16 @@ import '../styles/index.scss';
 import Layout from "../components/Layout"
 import SEO from "../components/seo"
 import GalleryView from '../components/GalleryView';
+import { siteMetadata } from '../../gatsby-config';
+import siteImg from '../images/site.jpg';
+
 
 class IndexPage extends React.Component {
   render() {
     const { data } = this.props;
     return (
         <Layout pageInfo={{ pageName: "index" }}>
-          <SEO title="Home" keywords={['Philadelphia Wedding Photography', 'Philadelphia Wedding Videography']} />
+          <SEO site={siteMetadata} title="Weddings" image={siteImg} />
           <SliderView images={data}/>
           <div className="gray-section intro">
             <Container>
