@@ -36,7 +36,7 @@ class IndexPage extends React.Component {
             <GalleryView images={data.gallery.images}/>
             <div className="pricing">
               <p><b>Pricing:</b></p>
-              <p>I know every wedding is unique, with unique needs. Please contact me at <a href="mailto:brian@23twenty.com">brian@briankphoto.com</a> to discuss your special day.</p>
+              <p>I know every wedding is unique, with unique needs. Please contact me at <a href="mailto:brian@briankphoto.com">brian@briankphoto.com</a> to discuss your special day.</p>
               <p>Individual (Photography or Video) wedding packages start at $2,000 - includes 2 shooters, 6 hours of coverage, and all high resolution digital images.</p>
               <p>Photography & Video packages start at $3,000.</p>
               <p>Fully designed wedding albums and fine art wall prints are also available as package add ons.</p>

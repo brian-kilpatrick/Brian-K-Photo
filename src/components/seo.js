@@ -46,9 +46,6 @@ const SEO = ({ site, title, image }) => {
             },
             {
               name: "twitter:card", content: "summary"
-            },
-            {
-              name: "google-site-verification", content: "WyOyqCHxTLyKcetD-RIWdG0NRb6OOvrmUkDjfoP5UKo"
             }
           ]}
       />

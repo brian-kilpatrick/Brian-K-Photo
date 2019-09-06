@@ -23,7 +23,7 @@ const Footer = () => (
           <p className="contact-heading">Get In Touch</p>
           <a className="contact-link" href="tel:267-223-7837">(267) 223-7837</a>
           <br/>
-          <a className="contact-link" href="mailto:brian@23Twenty.com">brian@briankphoto.com</a>
+          <a className="contact-link" href="mailto:brian@briankphoto.com">brian@briankphoto.com</a>
           <ul className="social social-bg social-s">
             <li>
               <a href="https://www.facebook.com/briankphotofilm/" target="_blank">

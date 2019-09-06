@@ -3,7 +3,7 @@ module.exports = {
   siteMetadata: {
     title: `Brian K Photography + Film | Philadelphia Wedding Photography | Philadelphia Wedding Videography`,
     description: `Virbrant & Modern Wedding Photography & Videography servicing Philadelphia, New Jersey, Delaware, NYC & Nationwide.`,
-    siteUrl: 'https://www.23twenty.com',
+    siteUrl: 'https://www.briankphoto.com',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
