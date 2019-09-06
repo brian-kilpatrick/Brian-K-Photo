@@ -1,7 +1,7 @@
 import React from 'react'
 import ScrollToTop from 'react-scroll-up'
 import { FaFacebookF, FaInstagram, FaChevronUp } from 'react-icons/fa'
-import Logo from '../../images/BK Logo - White.svg'
+import Logo from '../../images/LogoSVG-White.svg';
 import '../../styles/footer.scss'
 
 const Footer = () => (
