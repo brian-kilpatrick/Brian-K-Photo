@@ -1,38 +1,28 @@
-div.main {
-  min-height: 100vh;
-  padding-bottom: 60px;
+html {
+  overflow-x: hidden;
 }
 
-div.full-height {
-  min-height: 100vh;
-}
-
-a.link-no-style {
-  &:hover {
-    text-decoration: none;
-  }
-}
-
-.footer-col {
+.main-navbar {
+  height: 200px;
   display: flex;
-  flex-direction: column;
-  align-content: center;
+  justify-content: center;
   align-items: center;
-  footer {
-    display: flex;
-    position: relative;
-    bottom: 0;
-    margin-top: -60px;
-    height: 60px;
-    clear: both;
-    background-color: $color-primary;
-    color: white;
-    justify-content: center;
-    width: 100%;
 
-    span {
-      align-self: center;
-      text-align: center;
-    }
+  .logo {
+    height: 150px;
+    width: auto;
+    max-width: none;
   }
+}
+
+.gray-section {
+  background-color: #f7f8fc;
+}
+
+.header-text, .section-title {
+  font-family: 'Bebas-Bold' !important;
+  font-weight: bold !important;
+  font-size: 4em !important;
+  line-height: 1em !important;
+  color: #585858;
 }
