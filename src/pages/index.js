@@ -6,7 +6,15 @@ import Layout from "../components/Layout"
 import SEO from "../components/seo"
 import GalleryView from '../components/GalleryView';
 import { siteMetadata } from '../../gatsby-config';
-import siteImg from '../images/site.jpg';
+import Loadable from 'react-loadable';
+import '../styles/plyr.css';
+
+const Plyr = Loadable({
+  loader: () => import('react-plyr'),
+  loading() {
+    return <div></div>
+  }
+});
 
 
 class IndexPage extends React.Component {
@@ -14,7 +22,7 @@ class IndexPage extends React.Component {
     const { data } = this.props;
     return (
         <Layout pageInfo={{ pageName: "index" }}>
-          <SEO site={siteMetadata} title="Weddings" image={siteImg} />
+          <SEO site={siteMetadata} title="Weddings" />
           <SliderView images={data}/>
           <div className="gray-section intro">
             <Container>
@@ -34,11 +42,13 @@ class IndexPage extends React.Component {
               </p>
             </div>
             <GalleryView images={data.gallery.images}/>
+
+            <Plyr type="vimeo" videoId="363955382"/>
             <div className="pricing">
               <p><b>Pricing:</b></p>
               <p>I know every wedding is unique, with unique needs. Please contact me at <a href="mailto:brian@briankphoto.com">brian@briankphoto.com</a> to discuss your special day.</p>
-              <p>Individual (Photography or Video) wedding packages start at $2,000 - includes 2 shooters, 6 hours of coverage, and all high resolution digital images.</p>
-              <p>Photography & Video packages start at $3,000.</p>
+              <p>Individual (Photography or Video) wedding packages start at $2,500 - includes 2 shooters, 6 hours of coverage, and all high resolution digital images.</p>
+              <p>Photography & Video packages start at $4,000.</p>
               <p>Fully designed wedding albums and fine art wall prints are also available as package add ons.</p>
 
             </div>

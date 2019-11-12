@@ -1,7 +1,7 @@
 import React from 'react'
 import ScrollToTop from 'react-scroll-up'
 import { FaFacebookF, FaInstagram, FaChevronUp } from 'react-icons/fa'
-import Logo from '../../images/LogoSVG-White.svg';
+import Logo from '../../images/Logo-white.svg';
 import '../../styles/footer.scss'
 
 const Footer = () => (
@@ -21,7 +21,7 @@ const Footer = () => (
           <img src={Logo} className="footer-logo" />
           <div className="space25" />
           <p className="contact-heading">Get In Touch</p>
-          <a className="contact-link" href="tel:267-223-7837">(267) 223-7837</a>
+          <a className="contact-link" href="tel:267-223-7869">(267) 588-7869</a>
           <br/>
           <a className="contact-link" href="mailto:brian@briankphoto.com">brian@briankphoto.com</a>
           <ul className="social social-bg social-s">
