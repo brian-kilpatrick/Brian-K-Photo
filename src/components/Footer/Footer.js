@@ -3,6 +3,7 @@ import ScrollToTop from 'react-scroll-up'
 import { FaFacebookF, FaInstagram, FaChevronUp } from 'react-icons/fa'
 import Logo from '../../images/Logo-white.svg';
 import '../../styles/footer.scss'
+import { Link } from 'gatsby';
 
 const Footer = () => (
     <footer className="dark-wrapper inverse-text">
@@ -18,7 +19,9 @@ const Footer = () => (
 
       <div className="sub-footer">
         <div className="container inner text-center">
-          <img src={Logo} className="footer-logo" />
+          <Link to="/">
+            <img src={Logo} className="footer-logo" />
+          </Link>
           <div className="space25" />
           <p className="contact-heading">Get In Touch</p>
           <a className="contact-link" href="tel:267-223-7869">(267) 588-7869</a>

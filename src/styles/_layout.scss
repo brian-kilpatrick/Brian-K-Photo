@@ -19,10 +19,20 @@ html {
   background-color: #f7f8fc;
 }
 
-.header-text, .section-title {
+.header-text, .section-title, .main-header-text {
   font-family: 'Bebas-Bold' !important;
   font-weight: bold !important;
-  font-size: 4em !important;
+  font-size: 4em;
   line-height: 1em !important;
   color: #585858;
+}
+
+@media (max-width: 768px) {
+  .header-text {
+    font-size: 1.5em;
+  }
+  .sub-header {
+    font-size: 4em;
+  }
+
 }
