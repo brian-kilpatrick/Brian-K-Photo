@@ -128,6 +128,13 @@ export const query = graphql`
         }
       }
     }
+    collage: file(relativePath: {eq: "home/collage.jpg"}) {
+      img: childImageSharp {
+        fluid(maxWidth: 2000, quality: 100) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
   }
 `;
 
