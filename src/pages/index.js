@@ -14,6 +14,7 @@ class IndexPage extends React.Component {
     const { data } = this.props;
     const photoImg = data.photo.img.fluid;
     const videoImg = data.video.img.fluid;
+    const myImg = data.me.img.fluid;
 
     return (
         <Layout pageInfo={{ pageName: "index" }}>
@@ -31,10 +32,10 @@ class IndexPage extends React.Component {
               <div className="section-divider"></div>
               <h2> Your once in a lifetime moment should be captured in that very same way.</h2>
               <p className="main-text">
-                I'm Brian K, a <h1>Philadelphia wedding photographer & cinematographer</h1>.
-                My style is bold, vibrant, authentic, & modern. My mission is to provide you with a unique visual legacy
+                I'm Brian K, a <h1>Philadelphia & New Jersey wedding photographer & cinematographer</h1>.
+                My style is bold, vibrant, authentic, & modern. My passion is to give you a unique visual legacy
                 of love, joy & emotion that will last lifetimes. Your <b><i>story</i></b> deserves to be artfully
-                preserved & I'd be honored to help you tell it! I also know wedding planning can be stressful, so I aim to make this process as painless as possible.
+                preserved & I'd be honored to help you tell it! I know wedding planning can be stressful, so I aim to make this process as painless as possible.
                 I will work with you or your team to make sure your day and memories are captured in the best way possible.
                 Take a look around and lets chat!
                 <br/>
@@ -44,6 +45,7 @@ class IndexPage extends React.Component {
               </p>
             </div>
           </Container>
+
           <div className="gray-section">
             <Container>
               <Row>
@@ -55,16 +57,15 @@ class IndexPage extends React.Component {
                 </Col>
               </Row>
             </Container>
-
           </div>
+
           <Container>
             <div className="pricing">
               <p><b>Pricing:</b></p>
               <p>I know every wedding is unique, with unique needs. Please contact me at <a href="mailto:brian@briankphoto.com">brian@briankphoto.com</a> to discuss your special day.</p>
-              <p>Individual (Photography or Video) wedding packages start at $2,500 <i>(for bridal show attendees only)</i> - includes 2 shooters, 6 hours of coverage, and all high resolution digital images.</p>
+              <p>Individual (Photography or Video) wedding packages start at $2,500 - includes 2 shooters, 6 hours of coverage, and all high resolution digital images.</p>
               <p>Photography & Video packages start at $4,500.</p>
               <p>Fully designed wedding albums and fine art wall prints are also available as package add ons.</p>
-
             </div>
           </Container>
         </Layout>
@@ -129,6 +130,13 @@ export const query = graphql`
       }
     }
     collage: file(relativePath: {eq: "home/collage.jpg"}) {
+      img: childImageSharp {
+        fluid(maxWidth: 2000, quality: 100) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    me: file(relativePath: {eq: "home/me.jpg"}) {
       img: childImageSharp {
         fluid(maxWidth: 2000, quality: 100) {
           ...GatsbyImageSharpFluid
