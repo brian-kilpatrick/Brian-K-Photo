@@ -1,6 +1,6 @@
 import React from "react";
 import SliderView from '../components/SliderView';
-import { Row, Col, Container } from "react-bootstrap"
+import { Row, Col, Container, Button } from "react-bootstrap"
 import '../styles/index.scss';
 import Layout from "../components/Layout"
 import SEO from "../components/seo"
@@ -41,7 +41,7 @@ class IndexPage extends React.Component {
                 <br/>
                 - Brian K
                 <br/>
-                <a href="mailto:brian@briankphoto.com" target="_blank" rel="noopener noreferrer">brian@briankphoto.com</a>
+                <Link className="contact-button" to="/contact">Contact Us</Link>
               </p>
             </div>
           </Container>

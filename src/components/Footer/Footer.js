@@ -28,7 +28,7 @@ const Footer = () => (
                 <img src={Logo} className="footer-logo" />
               </Link>
               <div className="space25" />
-              <p className="contact-heading">Get In Touch</p>
+              <Link className="contact-button" to="/contact">Contact Us</Link>
               <a className="contact-link" href="tel:267-223-7869">(267) 588-7869</a>
               <br/>
               <a className="contact-link" href="mailto:brian@briankphoto.com">brian@briankphoto.com</a>
