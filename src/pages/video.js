@@ -22,7 +22,7 @@ class Video extends React.Component {
     return (
         <Layout pageInfo={{ pageName: "index" }}>
           <SEO site={siteMetadata} title="Wedding Videography" />
-          <div className="gray-section sub-intro">
+          <div className="black-section sub-intro">
             <Container>
               <div className="header-text sub-header">
                 Films

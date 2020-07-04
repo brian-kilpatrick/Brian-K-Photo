@@ -3,21 +3,32 @@ html {
 }
 
 .main-navbar {
-  height: 200px;
+  height: 95px;
   display: flex;
   justify-content: center;
   align-items: center;
 
-  .logo {
-    height: 150px;
-    width: auto;
-    max-width: none;
+  .logo-wrapper {
+    background: white;
+    z-index: 2;
+    padding: 15px;
+    position: relative;
+    top: 52px;
+    border-bottom: 5px solid #333;
+    .logo {
+      height: 150px;
+      width: auto;
+      max-width: none;
+      fill: #333;
+    }
   }
+
+
 }
 
 .gray-section {
   background-color: #f7f8fc;
-  padding: 50px;
+  //padding: 50px;
 }
 
 .container {
