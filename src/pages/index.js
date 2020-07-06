@@ -10,11 +10,12 @@ import Img from 'gatsby-image';
 
 
 class IndexPage extends React.Component {
+
+
   render() {
     const { data } = this.props;
     const photoImg = data.photo.img.fluid;
     const videoImg = data.video.img.fluid;
-    const myImg = data.me.img.fluid;
 
     return (
         <Layout pageInfo={{ pageName: "index" }}>
