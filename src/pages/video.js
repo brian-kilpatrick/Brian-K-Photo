@@ -23,11 +23,9 @@ class Video extends React.Component {
         <Layout pageInfo={{ pageName: "index" }}>
           <SEO site={siteMetadata} title="Wedding Videography" />
           <div className="black-section sub-intro">
-            <Container>
-              <div className="header-text sub-header">
-                Films
-              </div>
-            </Container>
+            <div className="header-text sub-header">
+              Films
+            </div>
           </div>
           <Container>
             <Plyr type="vimeo" videoId="383367094"/>

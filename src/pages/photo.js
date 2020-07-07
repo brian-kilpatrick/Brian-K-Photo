@@ -13,11 +13,9 @@ class Photo extends React.Component {
         <Layout pageInfo={{ pageName: "index" }}>
           <SEO site={siteMetadata} title="Wedding Photography" />
           <div className="black-section sub-intro">
-            <Container>
-              <div className="header-text sub-header">
-                Photography
-              </div>
-            </Container>
+            <div className="header-text sub-header">
+              Photography
+            </div>
           </div>
           <Container>
             <GalleryView images={data.gallery.images}/>
