@@ -68,6 +68,22 @@ class IndexPage extends React.Component {
             </Container>
           </div>
 
+          <div className="black-section">
+            <Container>
+              <div className="pricing main-text">
+                <h2 className="investment">Live Video Streaming</h2>
+                <div className="section-divider"></div>
+                <p>We know, times have been rough lately. Many of you have been forced to make major decisions or alterations to
+                  your plans. We are now offering live streaming services to help your loved ones connect with you during this once in a life time
+                  moment. Whether you are scaling down or thinking of going completely virtual, we've got you covered!
+                </p>
+                <br/>
+                <p><b>Standard Streaming</b> includes one stationary camera angle streamed to platforms of your choice - starts at $750</p>
+                <p><b>Premium Streaming</b> includes two stationary camera angles with graphics - starts at $1,000</p>
+                <p><b>All In Streaming</b> includes two stationary camera angles with one moving camera: the full broadcast experience! - starts at $1,250</p>
+              </div>
+            </Container>
+          </div>
           <Container>
             <div className="pricing main-text">
               <h2 className="investment">Investment</h2>
