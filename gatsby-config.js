@@ -1,7 +1,7 @@
 module.exports = {
   pathPrefix: "/",
   siteMetadata: {
-    title: `Brian K Photography + Film | Philadelphia Wedding Photography | Philadelphia Wedding Videography`,
+    title: `Brian K Photography + Films | Philadelphia Wedding Photography | Philadelphia Wedding Videography`,
     description: `Virbrant & Modern Wedding Photography & Videography servicing Philadelphia, New Jersey, Delaware, NYC & Nationwide.`,
     siteUrl: 'https://www.briankphoto.com',
   },
@@ -32,8 +32,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'Brian K Photography + Film',
-        short_name: 'Brian K Photography + Film',
+        name: 'Brian K Photography + Films',
+        short_name: 'Brian K Photography + Films',
         description: 'Wedding Photography & Videography in Philadelphia, Pennsylvania and beyond',
         homepage_url: 'https://www.briankphoto.com',
         start_url: '/',

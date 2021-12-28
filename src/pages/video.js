@@ -28,7 +28,10 @@ class Video extends React.Component {
             </div>
           </div>
           <Container>
-            <Plyr type="vimeo" videoId="383367094"/>
+            <Plyr type="vimeo" videoId="645152108"/>
+            <Plyr type="vimeo" videoId="648008509"/>
+            <Plyr type="vimeo" videoId="657532781"/>
+            <Plyr type="vimeo" videoId="586495159"/>
             <Plyr type="vimeo" videoId="374926472"/>
             <Plyr type="vimeo" videoId="370508327"/>
           </Container>

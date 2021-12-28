@@ -89,8 +89,8 @@ class IndexPage extends React.Component {
               <h2 className="investment">Investment</h2>
               <div className="section-divider"></div>
               <p>I know every wedding is unique, with unique needs. Please <Link to="/contact">contact me</Link> to discuss your special day.</p>
-              <p>Individual (Photography or Video) wedding packages start at $2,500 - includes 2 shooters, 6 hours of coverage, and all high resolution digital images.</p>
-              <p>Photography & Video packages start at $4,500.</p>
+              <p>Individual (Photography or Video) wedding packages start at $3,000 - includes 2 shooters, 6 hours of coverage, and all high resolution digital images.</p>
+              <p>Photography & Video packages start at $5,500.</p>
               <p>Fully designed wedding albums and fine art wall prints are also available as package add ons.</p>
             </div>
           </Container>
