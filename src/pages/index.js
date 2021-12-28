@@ -22,14 +22,14 @@ class IndexPage extends React.Component {
           <SEO site={siteMetadata} title="Weddings" />
           <SliderView images={data}/>
           <div className="main-header-text">
-            Vibrant. <br/>Alive. <br/>Modern. <br/>Timeless. <br/> Your love captured perfectly.
+            Vibrant. <br/>Alive. <br/>Modern. <br/>Timeless. <br/> Your love captured <span className='special'>perfectly.</span>
           </div>
           <div className="black-section header-text">
             <h1>Philadelphia Wedding Photographer | NJ Wedding Photographer</h1>
           </div>
           <Container>
             <div className="main-info">
-              <h2 className="your-engaged">You're Engaged!</h2>
+              <h2 className="your-engaged special">You're Engaged!</h2>
               <div className="section-divider"></div>
               <div className="main-text">
                 <p>
@@ -114,7 +114,7 @@ export const query = graphql`
       images: edges {
         img: node {
           childImageSharp {
-            fluid(maxWidth: 2000, quality: 100) {
+            fluid(maxWidth: 1000, quality: 80) {
               ...GatsbyImageSharpFluid
             }
           }
@@ -133,7 +133,7 @@ export const query = graphql`
       images: edges {
         img: node {
           childImageSharp {
-            fluid(maxWidth: 2000, quality: 100) {
+            fluid(maxWidth: 1000, quality: 80) {
               ...GatsbyImageSharpFluid
             }
           }

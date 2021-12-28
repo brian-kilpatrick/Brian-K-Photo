@@ -1,9 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Cormorant&display=swap');
 
+
 @font-face {
   font-family: 'Bebas-Bold';
   src: url("/type/BebasNeue-Bold.ttf?ofrduu") format('truetype');
   font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Blackstone';
+  src: url("/type/blackstoneregular.woff") format('woff');
+  font-weight: normal;
   font-style: normal;
 }
 
