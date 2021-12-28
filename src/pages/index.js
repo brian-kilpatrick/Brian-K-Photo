@@ -86,7 +86,7 @@ class IndexPage extends React.Component {
           </div>
           <Container>
             <div className="pricing main-text">
-              <h2 className="investment">Investment</h2>
+              <h2 className="investment" id="investment">Investment</h2>
               <div className="section-divider"></div>
               <p>I know every wedding is unique, with unique needs. Please <Link to="/contact">contact me</Link> to discuss your special day.</p>
               <p>Individual (Photography or Video) wedding packages start at $3,000 - includes 2 shooters, 6 hours of coverage, and all high resolution digital images.</p>
