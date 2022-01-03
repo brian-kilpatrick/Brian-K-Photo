@@ -143,14 +143,14 @@ export const query = graphql`
     
     photo: file(relativePath: {eq: "home/photo.jpg"}) {
       img: childImageSharp {
-        fluid(maxWidth: 2000, quality: 100) {
+        fluid(maxWidth: 505, quality: 80) {
           ...GatsbyImageSharpFluid
         }
       }
     }
     video: file(relativePath: {eq: "home/video.jpg"}) {
       img: childImageSharp {
-        fluid(maxWidth: 2000, quality: 100) {
+        fluid(maxWidth: 505, quality: 80) {
           ...GatsbyImageSharpFluid
         }
       }
@@ -164,7 +164,7 @@ export const query = graphql`
     }
     me: file(relativePath: {eq: "home/me.jpg"}) {
       img: childImageSharp {
-        fluid(maxWidth: 2000, quality: 100) {
+        fluid(maxWidth: 300, quality: 80) {
           ...GatsbyImageSharpFluid
         }
       }

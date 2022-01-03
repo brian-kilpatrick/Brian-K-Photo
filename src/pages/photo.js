@@ -17,9 +17,7 @@ class Photo extends React.Component {
               Photography
             </div>
           </div>
-          <Container>
             <GalleryView images={data.gallery.images}/>
-          </Container>
         </Layout>
     )
   }

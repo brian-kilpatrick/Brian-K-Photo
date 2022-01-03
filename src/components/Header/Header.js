@@ -11,7 +11,7 @@ const Header = () => (
                 PHOTOGRAPHY
             </Link>
             <Link className="menu-link" to="/video">
-                VIDEOGRAPHY
+                FILMS
             </Link>
             <div className="logo-wrapper">
                 <Link className="menu-link" to="/" className="logo">
@@ -33,7 +33,7 @@ const Header = () => (
                 PHOTOGRAPHY
             </Link>
             <Link className="menu-link" to="/video">
-                VIDEOGRAPHY
+                FILMS
             </Link>
             <Link className="menu-link" to="/#investment">
                 Investment
