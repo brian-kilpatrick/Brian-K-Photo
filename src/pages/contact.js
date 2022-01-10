@@ -23,8 +23,13 @@ const Contact = () => {
 
   return (
       <Layout pageInfo={{ pageName: "index" }}>
+        <div className="black-section sub-intro">
+            <div className="header-text sub-header">
+              Contact
+            </div>
+          </div>
         <SEO site={siteMetadata} title="Contact Us" />
-        <Container className="contact-wrapper">
+        <Container>
           <div className="hb-p-5f9043aa43a3ba000d7acda2-1"></div>
           <img height="1" width="1" style={{"display": "none"}}
                src="https://www.honeybook.com/p.png?pid=5f9043aa43a3ba000d7acda2"/>

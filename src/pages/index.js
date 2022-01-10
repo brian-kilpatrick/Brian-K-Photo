@@ -42,7 +42,10 @@ class IndexPage extends React.Component {
                   This is <span className="your">your</span> day, <span className="your">your</span> love,
                   <span className="your"> your</span> story. I want to beautifully preserve it for a lifetime.
                   <br/><br/>
-                  Wedding planning can be stressful. Lets make this part simple.
+                  Wedding planning can be stressful. Lets make this part simple. 
+                  <br/><br/>
+                  My team and I have you covered with top-notch photography & videography in one place. My mission is not only 
+                  delivery a great product, but an amazing, stress free experience, from first contact to our final email. Our approach is catered to your style and personality as a couple.
                   I will work with you or your team to make sure your day and memories are captured in the best way possible.
                   Take a look around and lets chat!
                   <br/><br/>
@@ -78,9 +81,9 @@ class IndexPage extends React.Component {
                   moment. Whether you are scaling down or thinking of going completely virtual, we've got you covered!
                 </p>
                 <br/>
-                <p><b>Standard Streaming</b> includes one stationary camera angle streamed to platforms of your choice - starts at $750</p>
-                <p><b>Premium Streaming</b> includes two stationary camera angles with graphics - starts at $1,000</p>
-                <p><b>All In Streaming</b> includes two stationary camera angles with one moving camera: the full broadcast experience! - starts at $1,250</p>
+                <p><b>Standard Streaming</b> includes one stationary camera angle streamed to platforms of your choice - starts at $1,000</p>
+                <p><b>Premium Streaming</b> includes two stationary camera angles with graphics - starts at $1,250</p>
+                <p><b>All In Streaming</b> includes two stationary camera angles with one moving camera: the full broadcast experience! - starts at $1,500</p>
               </div>
             </Container>
           </div>
@@ -88,6 +91,8 @@ class IndexPage extends React.Component {
             <div className="pricing main-text">
               <h2 className="investment" id="investment">Investment</h2>
               <div className="section-divider"></div>
+              <p>Out of all the investments you make for your big day, photography & videography are one of the few things that will last beyond the day.</p>
+              
               <p>I know every wedding is unique, with unique needs. Please <Link to="/contact">contact me</Link> to discuss your special day.</p>
               <p>Individual (Photography or Video) wedding packages start at $3,000 - includes 2 shooters, 6 hours of coverage, and all high resolution digital images.</p>
               <p>Photography & Video packages start at $5,500.</p>

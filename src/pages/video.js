@@ -27,7 +27,9 @@ class Video extends React.Component {
               Films
             </div>
           </div>
-          <Container>
+          <Container className="video-wrapper main-text main-info">
+            <p>There's nothing like being able to re-live the best day of your life over and over again! <br /><br />
+              There's nothing like hearing the voices and seeing your expressions, your family, your love in motion!</p> <br />
             <Plyr type="vimeo" videoId="645152108"/>
             <Plyr type="vimeo" videoId="648008509"/>
             <Plyr type="vimeo" videoId="657532781"/>

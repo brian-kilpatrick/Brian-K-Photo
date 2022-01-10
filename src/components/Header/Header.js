@@ -21,14 +21,11 @@ const Header = () => (
             <Link className="menu-link" to="/#investment">
                 Investment
             </Link>
-            <Link className="menu-link" to="/">
-                Home
+            <Link className="menu-link" to="/contact">
+                CONTACT
             </Link>
         </Navbar>
         <Menu>
-            <Link className="menu-link" to="/">
-                Home
-            </Link>
             <Link className="menu-link" to="/photo">
                 PHOTOGRAPHY
             </Link>
@@ -37,6 +34,9 @@ const Header = () => (
             </Link>
             <Link className="menu-link" to="/#investment">
                 Investment
+            </Link>
+            <Link className="menu-link" to="/contact">
+                CONTACT
             </Link>
         </Menu>
     </Fragment>
