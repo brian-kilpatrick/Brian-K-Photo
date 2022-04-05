@@ -49,6 +49,9 @@ const SEO = ({ site, title, image }) => {
             },
             {
               name: "google-site-verification", content: "RZlxZO_c4i2y8gUTWVruoa87dOwvA9pVi1QGFh19pdU"
+            },
+            {
+              name: "facebook-domain-verification", content: "d67qmeh619xut86v3ekaenzzxxy9bp"
             }
           ]}
       />

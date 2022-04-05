@@ -24,9 +24,9 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-google-analytics',
+      resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingId: 'UA-134867932-2',
+        trackingIds: ['G-SKB575P3BE'],
       },
     },
     {
@@ -52,6 +52,12 @@ module.exports = {
             type: 'image/png',
           },
         ],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-facebook-pixel`,
+      options: {
+        pixelId: "1409621309434796",
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

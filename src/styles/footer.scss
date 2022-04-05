@@ -121,9 +121,27 @@ footer p {
   font-size: 25px;
 }
 
+.zola-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sub-footer {
+  padding: 0 390px;
+}
+
 @media (max-width: 768px) {
   .about-me {
     margin-top: 50px;
     flex-flow: column;
+  }
+
+  .sub-footer {
+    padding: 0;
+  }
+
+  .zola-badge {
+    margin-top: 45px;
   }
 }

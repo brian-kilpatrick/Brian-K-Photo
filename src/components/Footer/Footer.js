@@ -21,9 +21,9 @@ const Footer = () => (
       </div>
 
       <div className="sub-footer">
-        <div className="container inner text-center">
+        <div className="container-fluid inner text-center">
           <Row>
-            <Col md={4}>
+            <Col md={3}>
               <Link to="/">
                 <img src={Logo} className="footer-logo" />
               </Link>
@@ -50,14 +50,21 @@ const Footer = () => (
               </ul>
             </Col>
             <Col md={1} className="divider d-none d-sm-block "> | </Col>
-            <Col md={6} className="about-me">
+            <Col md={4} className="about-me">
               <img src={myImg} className="my-image" />
-              <div>
+              <div class="main-text">
                 <h4>About Me:</h4>
                 <p>I'm a husband, father, software developer, musician, & die-hard Philadelphia Eagles fan.</p>
                 <p>I'm pretty laid back & love hanging out with happy people!</p>
               </div>
 
+            </Col>
+            <Col md={1} className="divider d-none d-sm-block "> | </Col>
+            <Col md={3} className="zola-badge">
+              <a target="_blank" 
+                  href="https://www.zola.com/wedding-vendors/wedding-photographers/brian-k-photography-films?utm_source=vendor&utm_medium=various&utm_content=badge">
+                    <img height="200" width="200" alt="Featured on Zola" src="https://d1tntvpcrzvon2.cloudfront.net/static-assets/images/badges/featured_on_zola_v2.png" />
+              </a>
             </Col>
           </Row>
         </div>
