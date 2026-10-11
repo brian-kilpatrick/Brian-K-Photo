@@ -1,0 +1,63 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Slider from '../components/Slider.astro';
+import MainLink from '../components/MainLink.astro';
+import { asset, markdoc, read } from '../lib/content';
+
+const home = await read('home');
+---
+
+<Layout title="Home">
+  <Slider slides={home.slides} />
+  <div class="main-header-text">
+    {home.taglineLines.map((line) => <>{line} <br /></>)}
+    {home.taglineLead} <span class="special">{home.taglineFlourish}</span>
+  </div>
+  <div class="black-section header-text">
+    <h1>{home.seoHeading}</h1>
+  </div>
+  <div class="container">
+    <div class="main-info">
+      <h2 class="your-engaged special">{home.introHeading}</h2>
+      <div class="section-divider"></div>
+      <div class="main-text">
+        <Fragment set:html={markdoc(home.intro)} />
+        <a class="contact-button" href="/contact">Contact Us</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="gray-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <MainLink caption="Photography" image={asset(home.photoTile)} href="/photo" />
+        </div>
+        <div class="col-md-6">
+          <MainLink caption="Films" image={asset(home.filmTile)} href="/video" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {
+    home.streamingVisible && (
+      <div class="black-section">
+        <div class="container">
+          <div class="pricing main-text">
+            <h2 class="investment">{home.streamingHeading}</h2>
+            <div class="section-divider" />
+            <Fragment set:html={markdoc(home.streaming)} />
+          </div>
+        </div>
+      </div>
+    )
+  }
+  <div class="container">
+    <div class="pricing main-text">
+      <h2 class="investment" id="investment">{home.investmentHeading}</h2>
+      <div class="section-divider"></div>
+      <Fragment set:html={markdoc(home.investment)} />
+    </div>
+  </div>
+</Layout>

@@ -1,0 +1,157 @@
+---
+import '../styles/slider.scss';
+import { getImage } from 'astro:assets';
+import { asset } from '../lib/content';
+
+interface Slide {
+  desktop: string | null;
+  mobile: string | null;
+  alt: string;
+}
+interface Props {
+  slides: readonly Slide[];
+}
+
+const { slides } = Astro.props;
+const rendered = await Promise.all(
+  slides.map(async (s) => {
+    const [mobile, desktop] = await Promise.all([
+      getImage({ src: asset(s.mobile), widths: [500, 1000], format: 'webp' }),
+      getImage({ src: asset(s.desktop), widths: [1000, 1600, 2040], format: 'webp' }),
+    ]);
+    return { mobile, desktop, alt: s.alt };
+  }),
+);
+---
+
+<div class="slider-wrapper">
+  <div class="home-slider" data-slider>
+    <div class="slider-track">
+      {
+        rendered.map((s, i) => (
+          <picture class="slide">
+            <source srcset={s.mobile.srcSet.attribute} media="(max-width: 410px)" sizes="100vw" />
+            <source srcset={s.desktop.srcSet.attribute} media="(min-width: 411px)" sizes="100vw" />
+            <img
+              class="slider-img"
+              src={s.desktop.src}
+              alt={s.alt}
+              loading={i === 0 ? 'eager' : 'lazy'}
+              fetchpriority={i === 0 ? 'high' : 'auto'}
+              decoding="async"
+            />
+          </picture>
+        ))
+      }
+    </div>
+    <ul class="slick-dots" role="tablist">
+      {
+        rendered.map((_, i) => (
+          <li class={i === 0 ? 'slick-active' : ''}>
+            <button type="button" aria-label={`Show slide ${i + 1}`}>{i + 1}</button>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</div>
+
+<style is:global>
+  /* Replaces react-slick: a scroll-snap track that autoplays every 3s (slick's default). */
+  .slider-track {
+    display: flex;
+    height: 100%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+  .slider-track::-webkit-scrollbar {
+    display: none;
+  }
+  .slider-track .slide {
+    flex: 0 0 100%;
+    height: 100%;
+    scroll-snap-align: start;
+  }
+  .slider-track .slider-img {
+    display: block;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  .home-slider .slick-dots {
+    position: absolute;
+    bottom: 5px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+  }
+  .home-slider .slick-dots li {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+  }
+  .home-slider .slick-dots button {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+    border: 0;
+    background: transparent;
+    font-size: 0;
+    line-height: 0;
+    cursor: pointer;
+  }
+  .home-slider .slick-dots button::before {
+    content: '•';
+    position: absolute;
+    inset: 0;
+    line-height: 20px;
+    font-size: 15px;
+    color: #a78d58;
+    opacity: 0.25;
+  }
+  .home-slider .slick-dots li.slick-active button::before {
+    opacity: 0.75;
+  }
+</style>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-slider]').forEach((root) => {
+    const track = root.querySelector<HTMLElement>('.slider-track')!;
+    const dots = [...root.querySelectorAll<HTMLLIElement>('.slick-dots li')];
+    const count = dots.length;
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let index = 0;
+
+    const go = (i: number) => {
+      index = (i + count) % count;
+      track.scrollTo({ left: index * track.clientWidth, behavior: reduce ? 'auto' : 'smooth' });
+    };
+    track.addEventListener(
+      'scroll',
+      () => {
+        const i = Math.round(track.scrollLeft / track.clientWidth);
+        dots.forEach((d, n) => d.classList.toggle('slick-active', n === i));
+        index = i;
+      },
+      { passive: true },
+    );
+    dots.forEach((d, i) => d.querySelector('button')?.addEventListener('click', () => go(i)));
+
+    if (!reduce && count > 1) {
+      let timer = window.setInterval(() => go(index + 1), 3000);
+      // A swipe or dot tap restarts the countdown, so the slide someone chose stays put for a full beat.
+      const restart = () => {
+        clearInterval(timer);
+        timer = window.setInterval(() => go(index + 1), 3000);
+      };
+      track.addEventListener('pointerdown', restart);
+      root.addEventListener('click', restart);
+      document.addEventListener('visibilitychange', () => (document.hidden ? clearInterval(timer) : restart()));
+    }
+  });
+</script>

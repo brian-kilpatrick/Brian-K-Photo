@@ -598,3 +598,8 @@ figure.overlay img {
 .swiper-slide .overlay-info a {
   pointer-events: all;
 }
+
+// The Gatsby copy separated paragraphs with <br/><br/>; Markdoc emits <p>, so match that blank line.
+.main-info .main-text p {
+  margin-bottom: 1.5em;
+}

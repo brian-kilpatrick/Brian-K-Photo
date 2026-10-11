@@ -1,0 +1,90 @@
+---
+import { getImage } from 'astro:assets';
+import { asset } from '../lib/content';
+
+interface Photo {
+  image: string | null;
+  alt: string;
+}
+interface Props {
+  photos: readonly Photo[];
+}
+
+const { photos } = Astro.props;
+const items = await Promise.all(
+  photos.map(async (p) => {
+    const src = asset(p.image);
+    const [thumb, full] = await Promise.all([
+      getImage({ src, widths: [400, 700, 1000], format: 'webp' }),
+      getImage({ src, width: Math.min(1920, src.width), format: 'webp' }),
+    ]);
+    const fullHeight = Math.round((src.height / src.width) * Number(full.attributes.width ?? src.width));
+    return { thumb, full, alt: p.alt, ratio: src.width / src.height, fullWidth: full.attributes.width, fullHeight };
+  }),
+);
+---
+
+<!-- Justified rows like react-photo-gallery (target row height 300px, 2px gutters); PhotoSwipe is the lightbox. -->
+<div class="justified-gallery" id="gallery">
+  {
+    items.map((p) => (
+      <a
+        class="jg-item"
+        href={p.full.src}
+        data-pswp-width={p.fullWidth}
+        data-pswp-height={p.fullHeight}
+        style={`--ratio:${p.ratio}`}
+      >
+        <img
+          src={p.thumb.src}
+          srcset={p.thumb.srcSet.attribute}
+          sizes="(max-width: 768px) 100vw, 50vw"
+          alt={p.alt}
+          loading="lazy"
+          decoding="async"
+        />
+      </a>
+    ))
+  }
+</div>
+
+<style is:global>
+  .justified-gallery {
+    --row: 250px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .justified-gallery::after {
+    content: '';
+    flex-grow: 999;
+  }
+  .jg-item {
+    flex-grow: var(--ratio);
+    flex-basis: calc(var(--ratio) * var(--row));
+    margin: 2px;
+    cursor: pointer;
+  }
+  .jg-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: var(--ratio);
+    object-fit: cover;
+  }
+  @media (max-width: 576px) {
+    .justified-gallery {
+      --row: 180px;
+    }
+  }
+</style>
+
+<script>
+  import PhotoSwipeLightbox from 'photoswipe/lightbox';
+  import 'photoswipe/style.css';
+
+  new PhotoSwipeLightbox({
+    gallery: '#gallery',
+    children: 'a',
+    pswpModule: () => import('photoswipe'),
+  }).init();
+</script>

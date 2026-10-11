@@ -1,0 +1,24 @@
+// @ts-check
+import { defineConfig } from 'astro/config';
+import react from '@astrojs/react';
+import keystatic from '@keystatic/astro';
+import vercel from '@astrojs/vercel';
+
+// Pages are prerendered; only Keystatic's admin (/keystatic) and its API run on demand.
+export default defineConfig({
+  site: 'https://www.briankphoto.com',
+  integrations: [react(), keystatic()],
+  adapter: vercel(),
+  devToolbar: { enabled: false },
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          // Bootstrap 4's Sass predates the module system; its warnings are noise.
+          quietDeps: true,
+          silenceDeprecations: ['import', 'global-builtin', 'color-functions', 'slash-div', 'if-function'],
+        },
+      },
+    },
+  },
+});

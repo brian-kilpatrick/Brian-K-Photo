@@ -1,0 +1,31 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+interface Props {
+  caption: string;
+  image: ImageMetadata;
+  href: string;
+}
+
+const { caption, image, href } = Astro.props;
+---
+
+<figure class="overlay overlay4 main-link">
+  <a href={href} aria-label={caption}>
+    <span class="bg"></span>
+    <Image src={image} widths={[505, 1010]} sizes="(max-width: 768px) 100vw, 505px" alt="" />
+  </a>
+  <figcaption class="d-flex">
+    <div class="align-self-center mx-auto">
+      <span class="header-text mb-0">{caption}</span>
+    </div>
+  </figcaption>
+</figure>
+
+<style>
+  /* <Image> writes width/height attributes; without this the tile stretches to the intrinsic height. */
+  img {
+    height: auto;
+  }
+</style>

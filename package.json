@@ -1,65 +1,32 @@
 {
-  "name": "gatsby-starter-react-bootstrap",
+  "name": "brian-k-photo",
   "private": true,
-  "description": "A starter that includes and configures react-bootstrap and react-icons, along with SASS handling. ",
-  "version": "0.1.0",
-  "author": "Billy Jacoby <billyjacoby@gmail.com>",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "shots": "node scripts/shots.mjs"
+  },
   "dependencies": {
-    "bootstrap": "^4.3.1",
-    "gatsby": "^2.17.11",
-    "gatsby-image": "^2.0.41",
-    "gatsby-plugin-facebook-pixel": "^1.0.8",
-    "gatsby-plugin-google-gtag": "^4.4.0",
-    "gatsby-plugin-gtag": "^1.0.13",
-    "gatsby-plugin-manifest": "^2.2.27",
-    "gatsby-plugin-offline": "^2.0.25",
-    "gatsby-plugin-react-helmet": "^3.0.12",
-    "gatsby-plugin-sass": "^2.0.11",
-    "gatsby-plugin-sharp": "^2.0.35",
-    "gatsby-source-filesystem": "^2.0.33",
-    "gatsby-transformer-sharp": "^2.1.18",
-    "node-sass": "^4.12.0",
-    "prop-types": "^15.7.2",
-    "react": "^16.8.6",
-    "react-bootstrap": "^1.0.0-beta.8",
-    "react-burger-menu": "^3.0.6",
-    "react-datepicker": "^3.0.0",
-    "react-dom": "^16.8.6",
-    "react-helmet": "^5.2.0",
-    "react-icons": "^3.7.0",
-    "react-images": "^1.0.0",
-    "react-loadable": "^5.5.0",
-    "react-photo-gallery": "^8.0.0",
-    "react-player": "^1.13.0",
-    "react-plyr": "^2.2.0",
-    "react-scroll-up": "^1.3.3",
-    "react-slick": "^0.25.2",
-    "sharp": "^0.29.3",
-    "slick-carousel": "^1.8.1"
+    "@astrojs/react": "^7.0.1",
+    "@astrojs/vercel": "^11.0.13",
+    "@keystatic/astro": "^6.0.0",
+    "@keystatic/core": "^0.6.9",
+    "@markdoc/markdoc": "^0.4.0",
+    "@types/node": "^26.6.5",
+    "astro": "^7.3.8",
+    "bootstrap": "^4.6.2",
+    "photoswipe": "^5.4.4",
+    "plyr": "^3.8.5",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
   },
   "devDependencies": {
-    "gh-pages": "^2.1.1",
-    "prettier": "^1.17.0"
-  },
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "MIT",
-  "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop -H 0.0.0.0 -p 8000",
-    "deploy": "gatsby build && gh-pages -d public",
-    "format": "prettier --write src/**/*.{js,jsx}",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
-  },
-  "homepage": "https://billyjacoby.github.io/gatsby-react-bootstrap-starter/"
+    "@astrojs/check": "^0.9.10",
+    "playwright": "^1.64.0",
+    "sass": "^1.105.1",
+    "typescript": "^6.0.3"
+  }
 }
