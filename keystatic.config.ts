@@ -21,7 +21,7 @@ export default config({
       label: 'Contact & footer',
       path: 'src/content/settings',
       schema: {
-        phone: fields.text({ label: 'Phone number', description: 'Shown as typed, e.g. (267) 588-7187' }),
+        phone: fields.text({ label: 'Phone number', description: 'Shown as typed, e.g. (267) 277-3498' }),
         email: fields.text({ label: 'Email' }),
         facebook: fields.url({ label: 'Facebook page' }),
         instagram: fields.url({ label: 'Instagram profile' }),
