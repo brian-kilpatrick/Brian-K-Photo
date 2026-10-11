@@ -158,6 +158,10 @@ button {
   margin: 0;
   text-align: right;
 }
+/* The inner pages' titles are h1s for search engines but keep the band's alignment. */
+.black-section h1.sub-header {
+  text-align: inherit;
+}
 .black-section.header-text,
 .black-section .header-text {
   color: white;
@@ -238,7 +242,7 @@ button {
   .sub-intro {
     padding: 17px;
   }
-  .sub-header {
+  .black-section .sub-header {
     margin-top: 94px;
     font-size: 4em;
   }

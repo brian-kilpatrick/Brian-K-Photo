@@ -5,9 +5,9 @@ import { markdoc, read } from '../lib/content';
 const films = await read('films');
 ---
 
-<Layout title="Wedding Videography">
+<Layout title="Wedding Videography" description={films.description}>
   <div class="black-section sub-intro">
-    <div class="header-text sub-header">Films</div>
+    <h1 class="header-text sub-header">Films</h1>
   </div>
   <div class="container main-text main-info">
     <Fragment set:html={markdoc(films.intro)} />

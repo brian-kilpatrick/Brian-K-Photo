@@ -5,9 +5,26 @@ import MainLink from '../components/MainLink.astro';
 import { asset, markdoc, read } from '../lib/content';
 
 const home = await read('home');
+const settings = await read('settings');
+
+// Tells search engines who the business is and where it works.
+const business = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: settings.siteName,
+  description: settings.siteDescription,
+  url: 'https://www.briankphoto.com/',
+  logo: 'https://www.briankphoto.com/img/LogoPng.png',
+  image: 'https://www.briankphoto.com/img/site.jpg',
+  email: settings.email,
+  telephone: settings.phone,
+  address: { '@type': 'PostalAddress', addressLocality: 'Philadelphia', addressRegion: 'PA', addressCountry: 'US' },
+  areaServed: ['Philadelphia', 'New Jersey', 'Delaware', 'New York City'],
+  sameAs: [settings.facebook, settings.instagram, settings.zola?.split('?')[0]].filter(Boolean),
+};
 ---
 
-<Layout title="Home">
+<Layout structuredData={business}>
   <Slider slides={home.slides}>
     {home.taglineLines.map((line) => <>{line} <br /></>)}
     {home.taglineLead} <span class="special">{home.taglineFlourish}</span>

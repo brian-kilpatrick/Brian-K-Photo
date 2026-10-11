@@ -27,8 +27,10 @@ export default config({
         instagram: fields.url({ label: 'Instagram profile' }),
         zola: fields.url({ label: 'Zola listing' }),
         aboutMe: fields.markdoc.inline({ label: 'About me (footer)' }),
+        siteName: fields.text({ label: 'Business name', description: 'Ends every page title except the home page’s' }),
         siteTitle: fields.text({ label: 'Site title (search results)' }),
         siteDescription: fields.text({ label: 'Site description (search results)', multiline: true }),
+        contactDescription: fields.text({ label: 'Contact page description (search results)', multiline: true }),
       },
     }),
     home: singleton({
@@ -65,6 +67,8 @@ export default config({
       label: 'Photography page',
       path: 'src/content/photography',
       schema: {
+        intro: fields.markdoc.inline({ label: 'Intro' }),
+        description: fields.text({ label: 'Description (search results and link previews)', multiline: true }),
         photos: fields.array(
           fields.object({
             image: image('Photo', 'gallery'),
@@ -79,6 +83,7 @@ export default config({
       path: 'src/content/films',
       schema: {
         intro: fields.markdoc.inline({ label: 'Intro' }),
+        description: fields.text({ label: 'Description (search results and link previews)', multiline: true }),
         videos: fields.array(
           fields.object({
             vimeoId: fields.text({ label: 'Vimeo video ID', description: 'The number at the end of the Vimeo link' }),

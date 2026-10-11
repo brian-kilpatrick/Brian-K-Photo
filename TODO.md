@@ -26,6 +26,13 @@ build from GitHub Pages (`gh-pages` branch).
 - [ ] "Live Video Streaming" section is pandemic-era copy — hide it with the toggle in Keystatic (Home page).
 - [ ] Prices ($3,000 / $5,500 / streaming tiers) date from 2022.
 - [ ] Gallery photo descriptions are generic ("…wedding photography 12"); real alt text helps SEO.
+- [ ] **The Photography page intro and the search descriptions are Claude's drafts** (Keystatic → Photography
+      page: Intro, Description; Films page: Description; Contact & footer: Contact page description). Rewrite
+      them in your voice.
+- [ ] **The home page title is ~100 characters**; Google shows about 60. Consider shortening it in Keystatic
+      (Contact & footer → Site title), e.g. "Brian K Photography + Films | Philadelphia Wedding Photographer".
+- [ ] **After the domain move:** submit `https://www.briankphoto.com/sitemap-index.xml` in Google Search Console
+      (already verified), and make sure the Google Business Profile has the new number, (267) 277-3498.
 
 ## Later
 

@@ -1,13 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { read } from '../lib/content';
+
+const settings = await read('settings');
 
 // HoneyBook renders the inquiry form into the placeholder div below.
 const honeybookId = '5f9043aa43a3ba000d7acda2';
 ---
 
-<Layout title="Contact Us">
+<Layout title="Contact Us" description={settings.contactDescription}>
   <div class="black-section sub-intro">
-    <div class="header-text sub-header">Contact</div>
+    <h1 class="header-text sub-header">Contact</h1>
   </div>
   <div class="container">
     <div class={`hb-p-${honeybookId}-1`}></div>

@@ -1,14 +1,17 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Gallery from '../components/Gallery.astro';
-import { read } from '../lib/content';
+import { markdoc, read } from '../lib/content';
 
-const { photos } = await read('photography');
+const { photos, intro, description } = await read('photography');
 ---
 
-<Layout title="Wedding Photography">
+<Layout title="Wedding Photography" description={description}>
   <div class="black-section sub-intro">
-    <div class="header-text sub-header">Photography</div>
+    <h1 class="header-text sub-header">Photography</h1>
+  </div>
+  <div class="container main-text main-info">
+    <Fragment set:html={markdoc(intro)} />
   </div>
   <Gallery photos={photos} />
 </Layout>
