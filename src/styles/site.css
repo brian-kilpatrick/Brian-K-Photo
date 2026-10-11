@@ -1,0 +1,251 @@
+/*
+ * Site-wide styles. Component-specific rules live in each component's <style>.
+ * Replaces Bootstrap 4 + the old theme SCSS; values were transcribed from what
+ * those rendered, and scripts/style-diff.mjs checks the result against it.
+ */
+
+@font-face {
+  font-family: 'Bebas-Bold';
+  src: url('/type/BebasNeue-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Blackstone';
+  src: url('/type/blackstoneregular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* proxima-nova and linotype-didot come from the Adobe Fonts kit linked in Layout.astro. */
+
+:root {
+  --ink: #212529;
+  --muted: #585858;
+  --accent: #a16326;
+  --gold: #a78d58;
+  --footer-bg: rgb(21, 21, 21);
+  --soft-bg: #f7f8fc;
+  --link-hover: #0056b3;
+
+  --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-text: 'proxima-nova', serif;
+  --font-display: 'Bebas-Bold', sans-serif;
+  --font-script: 'Blackstone', serif;
+  --font-serif: 'linotype-didot', serif;
+
+  --header-height: 95px;
+}
+
+/* ---- Base ---- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--ink);
+  background-color: #fff;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+h1 {
+  font-size: 2.5rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h4 {
+  font-size: 1.5rem;
+}
+
+p,
+ul {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:hover {
+  color: var(--link-hover);
+  text-decoration: underline;
+}
+
+img,
+svg {
+  vertical-align: middle;
+}
+
+figure {
+  margin: 0;
+}
+
+button {
+  margin: 0;
+  font: inherit;
+  border-radius: 0;
+}
+
+/* ---- Layout ---- */
+
+.container {
+  width: 100%;
+  margin-inline: auto;
+  padding: 50px;
+}
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+/* A full-bleed black band. Its top margin clears the fixed header on the inner pages. */
+.black-section {
+  margin-top: 109px;
+  padding: 10px;
+  background: black;
+  color: white;
+}
+.black-section h1 {
+  margin: 0;
+  text-align: right;
+}
+.black-section.header-text,
+.black-section .header-text {
+  color: white;
+}
+
+.gray-section {
+  background-color: var(--soft-bg);
+}
+
+/* ---- Type ---- */
+
+.header-text {
+  font-family: var(--font-display);
+  font-weight: bold;
+  font-size: 4em;
+  line-height: 1em;
+  color: var(--muted);
+}
+
+.sub-intro {
+  margin-bottom: 20px;
+}
+
+.main-text {
+  font-family: var(--font-text);
+  font-weight: 400;
+}
+
+.main-info,
+.pricing {
+  font-size: 1.3em;
+}
+
+.main-info .main-text p {
+  margin-bottom: 1.5em;
+}
+
+.section-divider {
+  width: 100px;
+  margin-bottom: 20px;
+  border: 2px solid;
+}
+
+.special {
+  font-family: var(--font-script);
+  color: var(--accent);
+}
+
+.your-engaged {
+  font-size: 66px;
+  font-weight: 400;
+}
+
+.investment {
+  font-family: var(--font-serif);
+  font-size: 30px;
+}
+
+.contact-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  margin-top: 10px;
+  padding: 10px;
+  font-family: var(--font-display);
+  background-color: var(--muted);
+  color: white;
+}
+.contact-button:hover {
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .header-text {
+    font-size: 1.5em;
+  }
+  .sub-intro {
+    padding: 17px;
+  }
+  .sub-header {
+    margin-top: 94px;
+    font-size: 4em;
+  }
+  .black-section.header-text h1 {
+    font-size: 16px;
+  }
+  .your-engaged {
+    font-size: 42px;
+  }
+}

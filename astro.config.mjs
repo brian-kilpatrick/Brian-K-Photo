@@ -10,15 +10,4 @@ export default defineConfig({
   integrations: [react(), keystatic()],
   adapter: vercel(),
   devToolbar: { enabled: false },
-  vite: {
-    css: {
-      preprocessorOptions: {
-        scss: {
-          // Bootstrap 4's Sass predates the module system; its warnings are noise.
-          quietDeps: true,
-          silenceDeprecations: ['import', 'global-builtin', 'color-functions', 'slash-div', 'if-function'],
-        },
-      },
-    },
-  },
 });

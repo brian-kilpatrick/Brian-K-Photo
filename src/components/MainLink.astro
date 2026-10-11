@@ -11,21 +11,67 @@ interface Props {
 const { caption, image, href } = Astro.props;
 ---
 
-<figure class="overlay overlay4 main-link">
+<figure class="tile">
   <a href={href} aria-label={caption}>
     <span class="bg"></span>
     <Image src={image} widths={[505, 1010]} sizes="(max-width: 768px) 100vw, 505px" alt="" />
   </a>
-  <figcaption class="d-flex">
-    <div class="align-self-center mx-auto">
-      <span class="header-text mb-0">{caption}</span>
-    </div>
+  <figcaption>
+    <span class="header-text">{caption}</span>
   </figcaption>
 </figure>
 
 <style>
-  /* <Image> writes width/height attributes; without this the tile stretches to the intrinsic height. */
-  img {
+  .tile {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+  }
+  .tile a {
+    position: relative;
+    display: block;
+  }
+  .tile :global(img) {
+    display: block;
+    width: 100%;
     height: auto;
+  }
+
+  /* Bottom-weighted shade so the caption reads on any photo; darkens a touch on hover. */
+  .bg {
+    position: absolute;
+    inset: 0;
+    z-index: 4;
+    background: linear-gradient(
+      transparent 20%,
+      rgba(21, 21, 21, 0.3) 55%,
+      rgba(21, 21, 21, 0.7) 85%,
+      rgba(21, 21, 21, 0.75) 100%
+    );
+  }
+  .bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(21, 21, 21, 0.2);
+    opacity: 0;
+    transition: opacity 150ms ease-in-out;
+  }
+  .tile:hover .bg::after {
+    opacity: 1;
+  }
+
+  figcaption {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px 35px;
+    pointer-events: none;
+  }
+  figcaption .header-text {
+    color: white;
   }
 </style>

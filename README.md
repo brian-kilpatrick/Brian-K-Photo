@@ -19,3 +19,15 @@ npm run dev      # http://localhost:4321, editor at http://127.0.0.1:4321/keysta
 npm run build
 npm run shots -- http://localhost:4321 shots/local   # full-page screenshots + console/HTTP errors
 ```
+
+Before a styling change, snapshot every element's rendered style, make the change, snapshot again and diff —
+anything that moved or changed colour/font shows up by name:
+
+```sh
+node scripts/style-snapshot.mjs http://localhost:4321 shots/before.json
+# …change CSS…
+node scripts/style-snapshot.mjs http://localhost:4321 shots/after.json
+node scripts/style-diff.mjs shots/before.json shots/after.json
+```
+
+Styles: `src/styles/site.css` holds the site-wide rules; everything else lives in its component's `<style>`.

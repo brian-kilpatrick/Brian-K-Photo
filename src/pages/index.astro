@@ -8,11 +8,10 @@ const home = await read('home');
 ---
 
 <Layout title="Home">
-  <Slider slides={home.slides} />
-  <div class="main-header-text">
+  <Slider slides={home.slides}>
     {home.taglineLines.map((line) => <>{line} <br /></>)}
     {home.taglineLead} <span class="special">{home.taglineFlourish}</span>
-  </div>
+  </Slider>
   <div class="black-section header-text">
     <h1>{home.seoHeading}</h1>
   </div>
@@ -29,13 +28,9 @@ const home = await read('home');
 
   <div class="gray-section">
     <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <MainLink caption="Photography" image={asset(home.photoTile)} href="/photo" />
-        </div>
-        <div class="col-md-6">
-          <MainLink caption="Films" image={asset(home.filmTile)} href="/video" />
-        </div>
+      <div class="tiles">
+        <MainLink caption="Photography" image={asset(home.photoTile)} href="/photo" />
+        <MainLink caption="Films" image={asset(home.filmTile)} href="/video" />
       </div>
     </div>
   </div>
@@ -61,3 +56,18 @@ const home = await read('home');
     </div>
   </div>
 </Layout>
+
+<style>
+  .tiles {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+  @media (max-width: 767px) {
+    .tiles {
+      grid-template-columns: 1fr;
+      gap: 25px;
+      margin-bottom: 25px;
+    }
+  }
+</style>

@@ -9,7 +9,7 @@ const links = [
 ];
 ---
 
-<nav class="main-navbar navbar navbar-expand navbar-light fixed-top">
+<nav class="main-navbar">
   {links.slice(0, 2).map((l) => <a class="menu-link" href={l.href}>{l.label}</a>)}
   <div class="logo-wrapper">
     <a class="logo" href="/" aria-label="Brian K Photography + Films — home"><LogoBlack /></a>
@@ -17,7 +17,7 @@ const links = [
   {links.slice(2).map((l) => <a class="menu-link" href={l.href}>{l.label}</a>)}
 </nav>
 
-<!-- Phone menu: same bm-* markup react-burger-menu rendered, so _layout.scss still styles it. -->
+<!-- Phone menu (replaces react-burger-menu; keeps its bm-* names). -->
 <div class="bm" data-open="false">
   <div class="bm-burger-button">
     <button type="button" class="bm-toggle" aria-label="Open menu" aria-expanded="false">
@@ -42,15 +42,62 @@ const links = [
   </div>
 </div>
 
-<style is:global>
-  /* Structural styles react-burger-menu applied inline; colours stay in _layout.scss. */
+<style>
+  .main-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1030;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: var(--header-height);
+    padding: 0.5rem 1rem;
+    background: white;
+  }
+
+  .menu-link {
+    margin: 0 80px;
+    font-family: var(--font-display);
+    font-size: 20px;
+  }
+  .menu-link:hover {
+    color: initial;
+    text-decoration: none;
+  }
+
+  /* The logo hangs below the bar on desktop. */
+  .logo-wrapper {
+    position: relative;
+    top: 52px;
+    z-index: 2000;
+    padding: 15px;
+    background: white;
+    border-bottom: 5px solid #333;
+    opacity: 0.83;
+  }
+  .logo-wrapper :global(svg) {
+    height: 150px;
+    width: auto;
+    fill: #333;
+  }
+
+  /* ---- Phone menu ---- */
+  .bm-burger-button {
+    position: fixed;
+    top: 36px;
+    left: 36px;
+    z-index: 1340;
+    width: 36px;
+    height: 30px;
+  }
   .bm-burger-button button,
   .bm-cross-button button {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
-    margin: 0;
     padding: 0;
     border: none;
     background: transparent;
@@ -58,40 +105,55 @@ const links = [
   }
   .bm-burger-bars {
     position: absolute;
-    height: 20%;
     left: 0;
     right: 0;
+    height: 20%;
+    background: #373a47;
+  }
+  .bm-burger-button:hover .bm-burger-bars {
+    background: #a90000;
   }
   .bm-cross-button {
     position: absolute;
-    right: 8px;
     top: 8px;
+    right: 8px;
+    width: 24px;
+    height: 24px;
   }
   .bm-cross {
     position: absolute;
-    width: 3px;
-    height: 14px;
     top: 5px;
     left: 10px;
+    width: 3px;
+    height: 14px;
+    background: #bdc3c7;
   }
   .bm-menu-wrap {
+    position: fixed;
     top: 0;
     left: 0;
+    z-index: 1340;
     width: 300px;
     max-width: 85vw;
+    height: 100%;
     transform: translate3d(-100%, 0, 0);
     transition: transform 0.5s;
   }
   .bm-menu {
-    height: 100%;
     box-sizing: border-box;
+    height: 100%;
     overflow: auto;
+    padding: 2.5em 1.5em 0;
+    font-size: 1.15em;
+    background: #373a47;
   }
   .bm-item-list {
     height: 100%;
+    padding: 0.8em;
   }
   .bm-item {
     display: block;
+    margin: 0;
     padding: 0.4em 0;
     color: #b8b7ad;
   }
@@ -99,6 +161,7 @@ const links = [
     position: fixed;
     inset: 0;
     z-index: 1300;
+    background: rgba(0, 0, 0, 0.3);
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s;
@@ -109,6 +172,23 @@ const links = [
   .bm[data-open='true'] .bm-overlay {
     opacity: 1;
     visibility: visible;
+  }
+
+  @media (max-width: 768px) {
+    .main-navbar .menu-link {
+      display: none;
+    }
+    .logo-wrapper {
+      top: 5px;
+    }
+    .logo-wrapper :global(svg) {
+      height: 81px;
+    }
+  }
+  @media (min-width: 769px) {
+    .bm {
+      display: none;
+    }
   }
   @media (prefers-reduced-motion: reduce) {
     .bm-menu-wrap,

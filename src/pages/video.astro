@@ -9,7 +9,7 @@ const films = await read('films');
   <div class="black-section sub-intro">
     <div class="header-text sub-header">Films</div>
   </div>
-  <div class="container video-wrapper main-text main-info">
+  <div class="container main-text main-info">
     <Fragment set:html={markdoc(films.intro)} />
     <br />
     {
@@ -27,6 +27,12 @@ const films = await read('films');
     }
   </div>
 </Layout>
+
+<style>
+  .container :global(.plyr) {
+    margin-bottom: 30px;
+  }
+</style>
 
 <script>
   import Plyr from 'plyr';

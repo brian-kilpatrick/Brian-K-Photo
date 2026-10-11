@@ -1,7 +1,5 @@
 ---
-import '../styles/style.scss';
-import '../styles/index.scss';
-import '../styles/footer.scss';
+import '../styles/site.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { read } from '../lib/content';
@@ -28,6 +26,9 @@ const ogImage = `${siteUrl}/img/site.jpg`;
     <meta name="description" content={description} />
     <link rel="canonical" href={new URL(Astro.url.pathname, siteUrl)} />
     <link rel="icon" href="/img/LogoPng.png" type="image/png" />
+    <link rel="preconnect" href="https://use.typekit.net" crossorigin />
+    <!-- Adobe Fonts kit: proxima-nova, linotype-didot -->
+    <link rel="stylesheet" href="https://use.typekit.net/zta7dxa.css" />
     <meta property="og:title" content={siteTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={siteUrl} />
@@ -77,10 +78,10 @@ const ogImage = `${siteUrl}/img/site.jpg`;
     </script>
   </head>
   <body>
-    <div class="content-wrapper">
-      <Header />
+    <Header />
+    <main>
       <slot />
-      <Footer settings={settings} />
-    </div>
+    </main>
+    <Footer settings={settings} />
   </body>
 </html>
