@@ -37,5 +37,6 @@ The Astro site is live at https://www.briankphoto.com (Vercel, deployed from `ma
 
 ## Later
 
-- [ ] Unpin `@astrojs/vercel` once withastro/astro#18328 is fixed.
+- [ ] Unpin `@astrojs/vercel` once withastro/astro#18328 is fixed, and drop the `path-to-regexp` override in
+      `package.json` if the new version no longer pulls in 6.1.0 (`npm ls path-to-regexp`).
 - [ ] Close or merge the ~20 stale Dependabot branches on GitHub (they target the deleted Gatsby code).
