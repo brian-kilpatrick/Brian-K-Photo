@@ -5,14 +5,14 @@ build from GitHub Pages (`gh-pages` branch).
 
 ## To finish the switch
 
-- [ ] **Keystatic GitHub login** (needs a desktop browser, ~5 min). In `keystatic.config.ts` temporarily
+- [x] **Keystatic GitHub login** (needs a desktop browser, ~5 min). In `keystatic.config.ts` temporarily
       use `kind: 'github'` in dev, run `npm run dev`, open http://127.0.0.1:4321/keystatic, follow
       "Create GitHub App" (owner: brian-kilpatrick, repo access: Brian-K-Photo). It writes
       `KEYSTATIC_GITHUB_CLIENT_ID`, `KEYSTATIC_GITHUB_CLIENT_SECRET`, `KEYSTATIC_SECRET` and
       `PUBLIC_KEYSTATIC_GITHUB_APP_SLUG` to `.env`. Add all four to Vercel (`vercel env add`, Production),
       revert the config line, redeploy, and add `https://www.briankphoto.com/api/keystatic/github/oauth/callback`
       (and the vercel.app one) as callback URLs on the GitHub App.
-- [ ] **Merge `astro` into `master`** and set it as Vercel's production branch (it already is `master`).
+- [x] **Merge `astro` into `master`** and set it as Vercel's production branch (it already is `master`).
       Discard the stale uncommitted `src/pages/index.js` title edit in the main checkout first — the Astro
       home page already uses "Home".
 - [ ] **Move the domain.** Add `www.briankphoto.com` and `briankphoto.com` to the Vercel project, then
