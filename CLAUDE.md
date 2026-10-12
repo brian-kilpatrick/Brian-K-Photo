@@ -1,7 +1,7 @@
 # CLAUDE.md — Brian K Photography + Films
 
 Brian's wedding photo/video business site, www.briankphoto.com. Astro 7 + Keystatic CMS, hosted on Vercel.
-Ported from a 2022 Gatsby 2 site in October 2026; the switch-over is still in progress — see `TODO.md`.
+Ported from a 2022 Gatsby 2 site in October 2026; the switch-over's loose ends are in `TODO.md`.
 
 ## Where things are
 
@@ -40,5 +40,5 @@ Anything else is real.
   (lightbox, slider) silently don't run until you do.
 - **Keystatic storage is `local` in dev, `github` in production** — saving in dev writes files; saving on the
   live site commits to GitHub and Vercel rebuilds.
-- Deploy: `vercel deploy --prod` from this directory (project `brian-k-photo`). Git-connected, but the
-  production branch is still `master` (the old Gatsby code) until the switch-over in `TODO.md`.
+- Deploy: push to `master` — Vercel (project `brian-k-photo`) builds it to production. Keystatic saves on
+  the live site commit to `master` too, so pull before working.

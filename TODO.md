@@ -1,7 +1,6 @@
 # Switch-over TODO
 
-The Astro site is live at https://brian-k-photo.vercel.app. www.briankphoto.com still serves the old Gatsby
-build from GitHub Pages (`gh-pages` branch).
+The Astro site is live at https://www.briankphoto.com (Vercel, deployed from `master`).
 
 ## To finish the switch
 
@@ -15,11 +14,13 @@ build from GitHub Pages (`gh-pages` branch).
 - [x] **Merge `astro` into `master`** and set it as Vercel's production branch (it already is `master`).
       Discard the stale uncommitted `src/pages/index.js` title edit in the main checkout first — the Astro
       home page already uses "Home".
-- [ ] **Move the domain.** Add `www.briankphoto.com` and `briankphoto.com` to the Vercel project, then
-      change DNS at the registrar to Vercel's records. Keep `gh-pages` until the new site is confirmed live,
-      then delete the branch and turn off GitHub Pages in the repo settings.
-- [ ] After the move: re-run `npm run shots -- https://www.briankphoto.com shots/prod`, submit a test
-      HoneyBook inquiry, and check Google Search Console still verifies (meta tag is carried over).
+- [x] **Move the domain.** `www.briankphoto.com` serves the Astro site from Vercel (Let's Encrypt cert);
+      `briankphoto.com` redirects to it. Screenshots of the live domain are in `shots/prod`: only the expected noise.
+- [ ] **On or after 2026-10-12:** delete the `gh-pages` branch and turn off GitHub Pages in the repo settings.
+      Waiting a day lets cached DNS answers that still point at GitHub Pages expire, so nobody hits a 404.
+- [ ] Submit a test HoneyBook inquiry on https://www.briankphoto.com/contact and check it arrives.
+- [ ] In Google Search Console: check the site still verifies (the meta tag is on the page) and submit
+      `https://www.briankphoto.com/sitemap-index.xml`.
 
 ## Content to review (Brian's call — unchanged from the old site)
 
@@ -31,8 +32,7 @@ build from GitHub Pages (`gh-pages` branch).
       them in your voice.
 - [ ] **The home page title is ~100 characters**; Google shows about 60. Consider shortening it in Keystatic
       (Contact & footer → Site title), e.g. "Brian K Photography + Films | Philadelphia Wedding Photographer".
-- [ ] **After the domain move:** submit `https://www.briankphoto.com/sitemap-index.xml` in Google Search Console
-      (already verified), and make sure the Google Business Profile has the new number, (267) 277-3498.
+- [ ] Make sure the Google Business Profile has the new number, (267) 277-3498.
 
 ## Later
 
