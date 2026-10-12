@@ -24,14 +24,15 @@ The Astro site is live at https://www.briankphoto.com (Vercel, deployed from `ma
 
 ## Content to review (Brian's call — unchanged from the old site)
 
-- [ ] "Live Video Streaming" section is pandemic-era copy — hide it with the toggle in Keystatic (Home page).
+- [x] "Live Video Streaming" pandemic-era copy rewritten as "Live Streaming" (for loved ones who can't travel).
+      **Claude's draft** — reword it in Keystatic → Home page if it doesn't sound like you.
 - [ ] Prices ($3,000 / $5,500 / streaming tiers) date from 2022.
-- [ ] Gallery photo descriptions are generic ("…wedding photography 12"); real alt text helps SEO.
+- [x] Gallery and slideshow photos have real descriptions. Slides have two (wide and tall photos differ);
+      the phone one is swapped in by `Slider.astro`'s script.
 - [ ] **The Photography page intro and the search descriptions are Claude's drafts** (Keystatic → Photography
       page: Intro, Description; Films page: Description; Contact & footer: Contact page description). Rewrite
       them in your voice.
-- [ ] **The home page title is ~100 characters**; Google shows about 60. Consider shortening it in Keystatic
-      (Contact & footer → Site title), e.g. "Brian K Photography + Films | Philadelphia Wedding Photographer".
+- [x] Home page title shortened to "Brian K Photography + Films | Philadelphia Wedding Photographer" (66 chars).
 - [ ] Make sure the Google Business Profile has the new number, (267) 277-3498.
 
 ## Later

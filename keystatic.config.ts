@@ -41,7 +41,8 @@ export default config({
           fields.object({
             desktop: image('Wide photo (desktop)', 'home/slider/desktop'),
             mobile: image('Tall photo (phone)', 'home/slider/mobile'),
-            alt: fields.text({ label: 'Description' }),
+            alt: fields.text({ label: 'Description of the wide photo' }),
+            mobileAlt: fields.text({ label: 'Description of the tall photo' }),
           }),
           { label: 'Slideshow', itemLabel: (props) => props.fields.alt.value || 'Slide' },
         ),

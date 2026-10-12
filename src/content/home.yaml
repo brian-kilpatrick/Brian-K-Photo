@@ -1,31 +1,40 @@
 slides:
   - desktop: "/src/assets/home/slider/desktop/philadelphia-wedding-photographer-new-jersey-wedding-photography-desktop (1 of 9).jpg"
     mobile: "/src/assets/home/slider/mobile/philadelphia-wedding-photographer-new-jersey-wedding-photography-mobile 001.JPG"
-    alt: Philadelphia wedding photography 1
+    alt: Couple nose to nose under her veil, holding a red and white bouquet
+    mobileAlt: Couple sharing their first dance in a warmly lit reception room
   - desktop: "/src/assets/home/slider/desktop/philadelphia-wedding-photographer-new-jersey-wedding-photography-desktop (2 of 9).jpg"
     mobile: "/src/assets/home/slider/mobile/philadelphia-wedding-photographer-new-jersey-wedding-photography-mobile 002.JPG"
-    alt: Philadelphia wedding photography 2
+    alt: Groom and bride embracing between open wrought-iron garden gates
+    mobileAlt: Bride and groom sitting on a stone wall in front of a historic mansion
   - desktop: "/src/assets/home/slider/desktop/philadelphia-wedding-photographer-new-jersey-wedding-photography-desktop (3 of 9).jpg"
     mobile: "/src/assets/home/slider/mobile/philadelphia-wedding-photographer-new-jersey-wedding-photography-mobile 003.JPG"
-    alt: Philadelphia wedding photography 3
+    alt: Bride and groom touching foreheads outside after their ceremony
+    mobileAlt: First dance on a cloud of fog under a chandelier
   - desktop: "/src/assets/home/slider/desktop/philadelphia-wedding-photographer-new-jersey-wedding-photography-desktop (4 of 9).jpg"
     mobile: "/src/assets/home/slider/mobile/philadelphia-wedding-photographer-new-jersey-wedding-photography-mobile 004.JPG"
-    alt: Philadelphia wedding photography 4
+    alt: Groom holding his smiling bride under her veil
+    mobileAlt: Black and white photo of bridesmaids fluffing the bride's gown by a window
   - desktop: "/src/assets/home/slider/desktop/philadelphia-wedding-photographer-new-jersey-wedding-photography-desktop (5 of 9).jpg"
     mobile: "/src/assets/home/slider/mobile/philadelphia-wedding-photographer-new-jersey-wedding-photography-mobile 005.JPG"
-    alt: Philadelphia wedding photography 5
+    alt: Groomsmen and family laying hands on the groom in prayer before the ceremony
+    mobileAlt: Black and white portrait of a groom fastening his cufflinks
   - desktop: "/src/assets/home/slider/desktop/philadelphia-wedding-photographer-new-jersey-wedding-photography-desktop (6 of 9).jpg"
     mobile: "/src/assets/home/slider/mobile/philadelphia-wedding-photographer-new-jersey-wedding-photography-mobile 006.JPG"
-    alt: Philadelphia wedding photography 6
+    alt: Couple kissing as guests wave ribbon wands at their exit
+    mobileAlt: Bride with a navy and white bouquet in front of a garden fountain
   - desktop: "/src/assets/home/slider/desktop/philadelphia-wedding-photographer-new-jersey-wedding-photography-desktop (7 of 9).jpg"
     mobile: "/src/assets/home/slider/mobile/philadelphia-wedding-photographer-new-jersey-wedding-photography-mobile 007.JPG"
-    alt: Philadelphia wedding photography 7
+    alt: Bride and groom cheering through their grand entrance at the reception
+    mobileAlt: Black and white photo of a bride from behind, her gown's train spread across the floor
   - desktop: "/src/assets/home/slider/desktop/philadelphia-wedding-photographer-new-jersey-wedding-photography-desktop (8 of 9).jpg"
     mobile: "/src/assets/home/slider/mobile/philadelphia-wedding-photographer-new-jersey-wedding-photography-mobile 008.JPG"
-    alt: Philadelphia wedding photography 8
+    alt: Couple embracing on a tree-lined path
+    mobileAlt: Bride and groom kissing in the aisle after an outdoor ceremony
   - desktop: "/src/assets/home/slider/desktop/philadelphia-wedding-photographer-new-jersey-wedding-photography-desktop (9 of 9).jpg"
     mobile: "/src/assets/home/slider/mobile/philadelphia-wedding-photographer-new-jersey-wedding-photography-mobile 009.JPG"
-    alt: Philadelphia wedding photography 9
+    alt: Bride with a navy and white bouquet in front of a garden fountain
+    mobileAlt: Bride cheering with her groom on the dance floor
 taglineLines:
   - Vibrant.
   - Alive.
@@ -50,9 +59,9 @@ intro: |-
 photoTile: /src/assets/home/photo.jpg
 filmTile: /src/assets/home/video.jpg
 streamingVisible: true
-streamingHeading: Live Video Streaming
+streamingHeading: Live Streaming
 streaming: |-
-  We know, times have been rough lately. Many of you have been forced to make major decisions or alterations to your plans. We are now offering live streaming services to help your loved ones connect with you during this once-in-a-lifetime moment. Whether you are scaling down or thinking of going completely virtual, we've got you covered!
+  Not everyone you love can make the trip. Grandparents, friends overseas, family who can't travel. With live streaming they can still watch you walk down the aisle and say your vows, as it happens, from anywhere.
 
   **Standard Streaming** includes one stationary camera angle streamed to platforms of your choice - starts at $1,000
 
